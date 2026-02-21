@@ -310,7 +310,7 @@
         "stack_on_mobile": true,
         "show_counter": true,
         "desktop_image_effect": "reveal",
-        "image_position": "end",
+        "image_position": "start",
         "background": "",
         "background_gradient": "",
         "text_color": "",
