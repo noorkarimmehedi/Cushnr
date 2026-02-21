@@ -84,13 +84,6 @@
           "settings": {
             "liquid": "{% render 'live-fomo-counter' %}"
           }
-        },
-        "liquid_HTqcEP": {
-          "type": "liquid",
-          "disabled": true,
-          "settings": {
-            "liquid": "{% render 'offer-cards-carousel' %}"
-          }
         }
       },
       "block_order": [
@@ -105,8 +98,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "liquid_kYApyA",
-        "liquid_HTqcEP"
+        "liquid_kYApyA"
       ],
       "settings": {
         "full_width": true,
