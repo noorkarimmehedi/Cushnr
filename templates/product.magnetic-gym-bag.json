@@ -287,6 +287,37 @@
         "bottom_button_border_radius": 0
       }
     },
+    "images_with_text_scrolling_rpfRFj": {
+      "type": "images-with-text-scrolling",
+      "blocks": {
+        "item_Ff6FfC": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260221_170217_89ecfe95-ad09-4a04-b40b-15d988501417.webp",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Magnetische Bevestiging",
+            "content": "<p>Til je dagelijkse routine naar een hoger niveau met onze Magnetische Flessentas – ontworpen met geavanceerde magnetische integratie voor ongeëvenaarde veelzijdigheid en stijl. Hecht moeiteloos aan magnetische oppervlakken en verandert de manier waarop je je spullen meeneemt. Geschikt voor flessen tot 46 oz</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_Ff6FfC"
+      ],
+      "name": "Images and text scrolling",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": true,
+        "show_counter": true,
+        "desktop_image_effect": "reveal",
+        "image_position": "end",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
     "multiple_images_with_text_fdcxmW": {
       "type": "multiple-images-with-text",
       "blocks": {
@@ -306,6 +337,7 @@
       "block_order": [
         "item_JXatpg"
       ],
+      "disabled": true,
       "name": "Multiple images with text",
       "settings": {
         "full_width": true,
@@ -417,6 +449,7 @@
     "main",
     "text_with_icons_DrDHht",
     "custom_recommendations_CLpcEi",
+    "images_with_text_scrolling_rpfRFj",
     "multiple_images_with_text_fdcxmW",
     "images_with_text_scrolling_CrheQt",
     "multiple_images_with_text_YhEHQW",
