@@ -3,13 +3,12 @@
 
     <div class="trust-badge-item">
       <div class="trust-badge-icon">
-        <!-- Lucide Truck icon -->
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none" stroke="currentColor" stroke-width="1.5">
-    <path d="M19.5 17.5C19.5 18.8807 18.3807 20 17 20C15.6193 20 14.5 18.8807 14.5 17.5C14.5 16.1193 15.6193 15 17 15C18.3807 15 19.5 16.1193 19.5 17.5Z" />
-    <path d="M9.5 17.5C9.5 18.8807 8.38071 20 7 20C5.61929 20 4.5 18.8807 4.5 17.5C4.5 16.1193 5.61929 15 7 15C8.38071 15 9.5 16.1193 9.5 17.5Z" />
-    <path d="M14.5 17.5H9.5M19.5 17.5H20.2632C20.4831 17.5 20.5931 17.5 20.6855 17.4885C21.3669 17.4036 21.9036 16.8669 21.9885 16.1855C22 16.0931 22 15.9831 22 15.7632V13C22 9.41015 19.0899 6.5 15.5 6.5M15 15.5V7C15 5.58579 15 4.87868 14.5607 4.43934C14.1213 4 13.4142 4 12 4H5C3.58579 4 2.87868 4 2.43934 4.43934C2 4.87868 2 5.58579 2 7V15C2 15.9346 2 16.4019 2.20096 16.75C2.33261 16.978 2.52197 17.1674 2.75 17.299C3.09808 17.5 3.56538 17.5 4.5 17.5" />
-    <path d="M6.5 7V10.9998M10.5 7V10.9998" />
-</svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19.5 17.5C19.5 18.8807 18.3807 20 17 20C15.6193 20 14.5 18.8807 14.5 17.5C14.5 16.1193 15.6193 15 17 15C18.3807 15 19.5 16.1193 19.5 17.5Z" />
+          <path d="M9.5 17.5C9.5 18.8807 8.38071 20 7 20C5.61929 20 4.5 18.8807 4.5 17.5C4.5 16.1193 5.61929 15 7 15C8.38071 15 9.5 16.1193 9.5 17.5Z" />
+          <path d="M14.5 17.5H9.5M19.5 17.5H20.2632C20.4831 17.5 20.5931 17.5 20.6855 17.4885C21.3669 17.4036 21.9036 16.8669 21.9885 16.1855C22 16.0931 22 15.9831 22 15.7632V13C22 9.41015 19.0899 6.5 15.5 6.5M15 15.5V7C15 5.58579 15 4.87868 14.5607 4.43934C14.1213 4 13.4142 4 12 4H5C3.58579 4 2.87868 4 2.43934 4.43934C2 4.87868 2 5.58579 2 7V15C2 15.9346 2 16.4019 2.20096 16.75C2.33261 16.978 2.52197 17.1674 2.75 17.299C3.09808 17.5 3.56538 17.5 4.5 17.5" />
+          <path d="M6.5 7V10.9998M10.5 7V10.9998" />
+        </svg>
       </div>
       <div class="trust-badge-text">
         <span class="trust-badge-line1">Ships within 24h</span>
@@ -35,13 +34,22 @@
   </div>
 </div>
 
+<!-- Shipping Countdown Bar -->
+<div class="shipping-countdown-bar">
+  <span class="shipping-countdown-truck">🚚</span>
+  <span class="shipping-countdown-text">
+    Order within <span class="shipping-countdown-time" id="shipping-timer-{{ section.id }}">--</span> to ship today
+  </span>
+</div>
+
 <style>
   .trust-badges-bar {
     background-color: #f2f2f2;
     border-radius: 0;
     border: 2px solid #111111;
+    border-bottom: none;
     padding: 10px 28px;
-    margin: 16px 0;
+    margin: 16px 0 0 0;
     width: 100%;
     box-sizing: border-box;
   }
@@ -98,8 +106,42 @@
     margin: 0 8px;
   }
 
+  /* Shipping Countdown */
+  .shipping-countdown-bar {
+    background-color: #f2f2f2;
+    border: 2px solid #111111;
+    padding: 9px 20px;
+    margin: 0 0 16px 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .shipping-countdown-truck {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .shipping-countdown-text {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 400;
+  }
+
+  .shipping-countdown-time {
+    color: #2563eb;
+    font-weight: 700;
+  }
+
   @media (max-width: 480px) {
     .trust-badges-bar {
+      padding: 8px 16px;
+    }
+
+    .shipping-countdown-bar {
       padding: 8px 16px;
     }
 
@@ -116,5 +158,54 @@
       width: 30px;
       height: 30px;
     }
+
+    .shipping-countdown-text {
+      font-size: 12px;
+    }
   }
 </style>
+
+<script>
+(function() {
+  var timerId = 'shipping-timer-{{ section.id }}';
+
+  function getSecondsUntilCutoff() {
+    // Cutoff time: 5:00 PM local time (adjust hour as needed)
+    var cutoffHour = 17;
+    var cutoffMinute = 0;
+
+    var now = new Date();
+    var cutoff = new Date();
+    cutoff.setHours(cutoffHour, cutoffMinute, 0, 0);
+
+    // If cutoff already passed today, set to tomorrow
+    if (now >= cutoff) {
+      cutoff.setDate(cutoff.getDate() + 1);
+    }
+
+    return Math.floor((cutoff - now) / 1000);
+  }
+
+  function formatTime(totalSeconds) {
+    if (totalSeconds <= 0) return '0h 0min 0s';
+    var h = Math.floor(totalSeconds / 3600);
+    var m = Math.floor((totalSeconds % 3600) / 60);
+    var s = totalSeconds % 60;
+    var parts = [];
+    if (h > 0) parts.push(h + 'h');
+    parts.push(m + 'min');
+    parts.push(s + 's');
+    return parts.join(' ');
+  }
+
+  function tick() {
+    var el = document.getElementById(timerId);
+    if (!el) return;
+    var secs = getSecondsUntilCutoff();
+    el.textContent = formatTime(secs);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
