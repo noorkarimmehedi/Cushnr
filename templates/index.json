@@ -208,6 +208,7 @@
         "collection-2",
         "collection-3"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "stack_collections": false,
@@ -223,6 +224,107 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": ""
+      }
+    },
+    "featured_product_83YzMp": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_XBMV7C": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_Fp3Q7f": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges_hDC7bR": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_APFUC4": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_YQrDiy": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator_KgdMCY": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_4D9Xjx": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker_j6QVkX": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_mode": "block",
+            "color_mode": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_M6R3ki": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_ryprfn": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_BxPidQ": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_XBMV7C",
+        "title_Fp3Q7f",
+        "badges_hDC7bR",
+        "price_APFUC4",
+        "rating_YQrDiy",
+        "separator_KgdMCY",
+        "description_4D9Xjx",
+        "variant_picker_j6QVkX",
+        "quantity_selector_M6R3ki",
+        "buy_buttons_ryprfn",
+        "pickup_availability_BxPidQ"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "full_width": true,
+        "product": "magnetische-sporttas",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
       }
     },
     "impact-text": {
@@ -516,6 +618,7 @@
         "play_wxa8ik",
         "heading_ztENKU"
       ],
+      "disabled": true,
       "name": "Video",
       "settings": {
         "full_width": true,
@@ -884,6 +987,7 @@
     "featured_collection_MLcfXh",
     "featured-collection",
     "collection-list",
+    "featured_product_83YzMp",
     "impact-text",
     "image-with-text-overlay",
     "hot-spots",
