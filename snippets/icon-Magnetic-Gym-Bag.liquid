@@ -1,0 +1,118 @@
+<div class="trust-badges-bar">
+  <div class="trust-badges-inner">
+
+    <div class="trust-badge-item">
+      <div class="trust-badge-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13" rx="1"/>
+          <path d="M16 8h4l3 5v3h-7V8z"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      </div>
+      <div class="trust-badge-text">
+        <span class="trust-badge-line1">Ships within 24h</span>
+        <span class="trust-badge-line2">with tracking</span>
+      </div>
+    </div>
+
+    <div class="trust-badge-divider"></div>
+
+    <div class="trust-badge-item">
+      <div class="trust-badge-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 1L14.163 4.838L18.511 4.298L17.196 8.497L20.511 11.298L17.196 14.098L18.511 18.298L14.163 17.758L12 21.596L9.837 17.758L5.489 18.298L6.804 14.098L3.489 11.298L6.804 8.497L5.489 4.298L9.837 4.838L12 1Z" fill="#111"/>
+          <polyline points="8.5,11.5 11,14 15.5,9.5" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="trust-badge-text">
+        <span class="trust-badge-line1">60 day returns</span>
+        <span class="trust-badge-line2">guarantee</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .trust-badges-bar {
+    background-color: #f2f2f2;
+    border-radius: 14px;
+    padding: 16px 28px;
+    margin: 16px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .trust-badges-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .trust-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .trust-badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trust-badge-icon svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .trust-badge-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  .trust-badge-line1 {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 400;
+  }
+
+  .trust-badge-line2 {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 700;
+  }
+
+  .trust-badge-divider {
+    width: 1px;
+    height: 42px;
+    background-color: #cccccc;
+    flex-shrink: 0;
+    margin: 0 8px;
+  }
+
+  @media (max-width: 480px) {
+    .trust-badges-bar {
+      padding: 14px 16px;
+    }
+
+    .trust-badge-line1,
+    .trust-badge-line2 {
+      font-size: 12px;
+    }
+
+    .trust-badge-item {
+      gap: 10px;
+    }
+
+    .trust-badge-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>
