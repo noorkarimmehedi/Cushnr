@@ -325,12 +325,44 @@
         "button_background": "",
         "button_text_color": ""
       }
+    },
+    "multiple_images_with_text_YhEHQW": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "item_DVURyL": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260221_152214_d2444608-cbc1-4340-a02f-4bfd42ab401d.webp",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "Telefoonintegratie",
+            "content": "<p>Onze ingebouwde zijvakken met stretch zijn perfect voor snelle en gemakkelijke toegang tot je toestel, altijd binnen handbereik. Of je nu video’s opneemt, foto’s maakt, een bericht verstuurt of naar je favoriete muziek luistert – hij is er precies wanneer je hem nodig hebt!</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_DVURyL"
+      ],
+      "name": "Multiple images with text",
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
     }
   },
   "order": [
     "main",
     "text_with_icons_DrDHht",
     "custom_recommendations_CLpcEi",
-    "multiple_images_with_text_fdcxmW"
+    "multiple_images_with_text_fdcxmW",
+    "multiple_images_with_text_YhEHQW"
   ]
 }
