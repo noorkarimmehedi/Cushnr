@@ -29,12 +29,6 @@
             "heading_tag": "h3"
           }
         },
-        "liquid_kcbmwJ": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "{% render 'award-Magnetic-Gym-Bag' %}"
-          }
-        },
         "badges": {
           "type": "badges",
           "settings": {}
@@ -86,6 +80,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "liquid_kcbmwJ": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% render 'award-Magnetic-Gym-Bag' %}"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -135,7 +135,6 @@
         "vendor",
         "liquid_WKQNfH",
         "title",
-        "liquid_kcbmwJ",
         "badges",
         "price",
         "liquid_6JAzgX",
@@ -145,6 +144,7 @@
         "description",
         "variant_picker",
         "quantity_selector",
+        "liquid_kcbmwJ",
         "buy_buttons",
         "liquid_Cg8VdV",
         "liquid_kYApyA",
