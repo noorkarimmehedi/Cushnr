@@ -82,7 +82,7 @@
         "liquid_kYApyA": {
           "type": "liquid",
           "settings": {
-            "liquid": "{% render 'live-fomo-counter' %}"
+            "liquid": "{% render 'video-Magnetic-Gym-Bag' %}"
           }
         }
       },
