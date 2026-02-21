@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow": {
@@ -6,8 +15,8 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2800_x_1000_px_1.png",
-            "mobile_image": "shopify://shop_images/2800_x_1000_px_1200_x_1600_px.png",
+            "image": "shopify://shop_images/hf_20260221_112508_7cd78ab2-b4a1-4650-814b-53ff0449ba20.png",
+            "mobile_image": "shopify://shop_images/hf_20260221_112508_7cd78ab2-b4a1-4650-814b-53ff0449ba20.png",
             "content_max_width": 860,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -15,7 +24,7 @@
             "title": "",
             "heading_tag": "h0",
             "button_text": "",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify://products/magnetische-sporttas",
             "text_color": "#ffffff",
             "button_background": "#deb207",
             "button_text_color": "#000000",
@@ -51,7 +60,6 @@
         "slide-1",
         "slide-2"
       ],
-      "disabled": true,
       "settings": {
         "full_width": true,
         "allow_transparent_header": true,
@@ -66,8 +74,6 @@
     },
     "176719919952536179": {
       "type": "apps",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
@@ -158,7 +164,6 @@
           "type": "collection",
           "settings": {
             "collection": "bestsellers",
-            "image": "shopify://shop_images/4fa86523b286a0d24e94c359afd80b07.png",
             "subheading": "",
             "title": "",
             "url": "shopify://collections/bestsellers",
@@ -173,7 +178,6 @@
           "type": "collection",
           "settings": {
             "collection": "home",
-            "image": "shopify://shop_images/home.png",
             "subheading": "",
             "title": "",
             "url": "",
@@ -188,7 +192,6 @@
           "type": "collection",
           "settings": {
             "collection": "kitchen",
-            "image": "shopify://shop_images/kitchen.png",
             "subheading": "",
             "title": "",
             "url": "",
@@ -293,8 +296,6 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/Brand-02.png",
-        "mobile_image": "shopify://shop_images/Brand-02.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -349,8 +350,6 @@
       ],
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/Facebook_Cover.webp",
-        "mobile_image": "shopify://shop_images/2800_x_1000_px_1200_x_1600_px_3.webp",
         "title": "",
         "content": "",
         "button_text": "",
@@ -377,7 +376,6 @@
         "item-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_cgo14ocgo14ocgo1.png",
             "title": "",
             "heading_tag": "h4",
             "link_url": "shopify://products/all-in-one-fruit-veggie-washer-storage-basket",
@@ -524,7 +522,6 @@
         "allow_transparent_header": false,
         "autoplay": false,
         "video_size": "lg",
-        "video": "",
         "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
