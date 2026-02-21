@@ -11,8 +11,8 @@
         </svg>
       </div>
       <div class="trust-badge-text">
-        <span class="trust-badge-line1">Ships within 24h</span>
-        <span class="trust-badge-line2">with tracking</span>
+        <span class="trust-badge-line1">Verzending binnen 24u</span>
+        <span class="trust-badge-line2">met tracking</span>
       </div>
     </div>
 
@@ -26,19 +26,19 @@
         </svg>
       </div>
       <div class="trust-badge-text">
-        <span class="trust-badge-line1">60 day returns</span>
-        <span class="trust-badge-line2">guarantee</span>
+        <span class="trust-badge-line1">60 dagen retour</span>
+        <span class="trust-badge-line2">garantie</span>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- Shipping Countdown Bar -->
+<!-- Verzending Afteltimer -->
 <div class="shipping-countdown-bar">
   <span class="shipping-countdown-truck">🚚</span>
   <span class="shipping-countdown-text">
-    Order within <span class="shipping-countdown-time" id="shipping-timer-{{ section.id }}">--</span> to ship today
+    Bestel binnen <span class="shipping-countdown-time" id="shipping-timer-{{ section.id }}">--</span> om vandaag te verzenden
   </span>
 </div>
 
@@ -106,7 +106,7 @@
     margin: 0 8px;
   }
 
-  /* Shipping Countdown */
+  /* Verzending Afteltimer */
   .shipping-countdown-bar {
     background-color: #f2f2f2;
     border: 2px solid #111111;
@@ -169,30 +169,36 @@
 (function() {
   var timerId = 'shipping-timer-{{ section.id }}';
 
+  // Cutoff time: 17:00 (5 PM) Netherlands time
+  var CUTOFF_HOUR = 17;
+  var CUTOFF_MINUTE = 0;
+  var TIMEZONE = 'Europe/Amsterdam';
+
   function getSecondsUntilCutoff() {
-    // Cutoff time: 5:00 PM local time (adjust hour as needed)
-    var cutoffHour = 17;
-    var cutoffMinute = 0;
-
     var now = new Date();
-    var cutoff = new Date();
-    cutoff.setHours(cutoffHour, cutoffMinute, 0, 0);
 
-    // If cutoff already passed today, set to tomorrow
-    if (now >= cutoff) {
-      cutoff.setDate(cutoff.getDate() + 1);
+    // Get current time in Netherlands timezone
+    var nlNow = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
+
+    // Build cutoff in Netherlands timezone for today
+    var nlCutoff = new Date(nlNow);
+    nlCutoff.setHours(CUTOFF_HOUR, CUTOFF_MINUTE, 0, 0);
+
+    // If cutoff already passed, set to tomorrow
+    if (nlNow >= nlCutoff) {
+      nlCutoff.setDate(nlCutoff.getDate() + 1);
     }
 
-    return Math.floor((cutoff - now) / 1000);
+    return Math.floor((nlCutoff - nlNow) / 1000);
   }
 
   function formatTime(totalSeconds) {
-    if (totalSeconds <= 0) return '0h 0min 0s';
+    if (totalSeconds <= 0) return '0u 0min 0s';
     var h = Math.floor(totalSeconds / 3600);
     var m = Math.floor((totalSeconds % 3600) / 60);
     var s = totalSeconds % 60;
     var parts = [];
-    if (h > 0) parts.push(h + 'h');
+    if (h > 0) parts.push(h + 'u');
     parts.push(m + 'min');
     parts.push(s + 's');
     return parts.join(' ');
