@@ -413,6 +413,37 @@
         "button_text_color": ""
       }
     },
+    "images_with_text_scrolling_gFnfgf": {
+      "type": "images-with-text-scrolling",
+      "blocks": {
+        "item_yUHcMz": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260221_180459_fb65cbd5-3120-4eb1-bfb9-132f2698b9c7.webp",
+            "icon": "none",
+            "icon_width": 48,
+            "title": "Ritsvak",
+            "content": "<p>Berg je waardevolle spullen veilig op in het ruime ritsvak. Voorzien van meerdere opbergvakken, een sleutelhangerclip en onze kenmerkende Airtag-houder. Er past zelfs een iPad Mini of vergelijkbaar apparaat in!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_yUHcMz"
+      ],
+      "name": "Images and text scrolling",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": true,
+        "show_counter": true,
+        "desktop_image_effect": "reveal",
+        "image_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": ""
+      }
+    },
     "multiple_images_with_text_9UgRYE": {
       "type": "multiple-images-with-text",
       "blocks": {
@@ -432,6 +463,7 @@
       "block_order": [
         "item_8mykVd"
       ],
+      "disabled": true,
       "name": "Multiple images with text",
       "settings": {
         "full_width": true,
@@ -453,6 +485,7 @@
     "multiple_images_with_text_fdcxmW",
     "images_with_text_scrolling_CrheQt",
     "multiple_images_with_text_YhEHQW",
+    "images_with_text_scrolling_gFnfgf",
     "multiple_images_with_text_9UgRYE"
   ]
 }
