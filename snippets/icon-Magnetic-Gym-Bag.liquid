@@ -36,10 +36,10 @@
 
 <!-- Verzending Afteltimer -->
 <div class="shipping-countdown-bar">
-  <span class="shipping-countdown-truck">🚚</span>
-  <span class="shipping-countdown-text">
-    Bestel binnen <span class="shipping-countdown-time" id="shipping-timer-{{ section.id }}">--</span> om vandaag te verzenden
-  </span>
+  <div class="shipping-countdown-inner">
+    <span class="shipping-countdown-truck">🚚</span>
+    <span class="shipping-countdown-text">Bestel binnen <span class="shipping-countdown-time" id="shipping-timer-{{ section.id }}">--</span> om vandaag te verzenden</span>
+  </div>
 </div>
 
 <style>
@@ -114,7 +114,11 @@
     margin: 0 0 16px 0;
     width: 100%;
     box-sizing: border-box;
-    display: flex;
+    text-align: center;
+  }
+
+  .shipping-countdown-inner {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -129,6 +133,7 @@
     font-size: 14px;
     color: #111111;
     font-weight: 400;
+    text-align: center;
   }
 
   .shipping-countdown-time {
