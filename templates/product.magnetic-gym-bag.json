@@ -117,13 +117,6 @@
             "title": "Title",
             "content": "<p>Share some content to your customers about your products.</p>"
           }
-        },
-        "collapsible_text_eqhNRr": {
-          "type": "collapsible_text",
-          "settings": {
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>"
-          }
         }
       },
       "block_order": [
@@ -143,8 +136,7 @@
         "liquid_kYApyA",
         "collapsible_text_U6yiiU",
         "collapsible_text_iELAkn",
-        "collapsible_text_TpRbBi",
-        "collapsible_text_eqhNRr"
+        "collapsible_text_TpRbBi"
       ],
       "settings": {
         "full_width": true,
