@@ -17,6 +17,12 @@
           "disabled": true,
           "settings": {}
         },
+        "liquid_WKQNfH": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% render 'review-Magnetic-Gym-Bag' %}"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -121,6 +127,7 @@
       },
       "block_order": [
         "vendor",
+        "liquid_WKQNfH",
         "title",
         "badges",
         "price",
