@@ -107,15 +107,15 @@
         "collapsible_text_iELAkn": {
           "type": "collapsible_text",
           "settings": {
-            "title": "Title",
+            "title": "Specificaties",
             "content": "<p>Share some content to your customers about your products.</p>"
           }
         },
         "collapsible_text_TpRbBi": {
           "type": "collapsible_text",
           "settings": {
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.</p>"
+            "title": "Verzending & Retourneren",
+            "content": "<p>GRATIS express levering (5-7 dagen) bij bestellingen vanaf €100+</p><p>Drievoudige garantie:</p><p>60 dagen geld-terug-garantie<br/>Verkeerde kleur? Gratis omruiling<br/>Pakket kwijtgeraakt? Gratis vervanging</p><p>Retourneren: E-mail ons voor retourzendingen. Volledige terugbetaling via <a href=\"mailto:support@themagneticbag.shop\">support@themagneticbag.shop</a></p>"
           }
         }
       },
