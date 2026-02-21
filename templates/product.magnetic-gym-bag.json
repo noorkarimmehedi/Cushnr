@@ -33,6 +33,12 @@
             "show_taxes_notice": false
           }
         },
+        "liquid_6JAzgX": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% render 'features-Magnetic-Gym-Bag' %}"
+          }
+        },
         "rating": {
           "type": "rating",
           "settings": {
@@ -97,6 +103,7 @@
         "title",
         "badges",
         "price",
+        "liquid_6JAzgX",
         "rating",
         "payment_terms",
         "separator",
