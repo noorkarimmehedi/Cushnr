@@ -92,7 +92,14 @@
     "whatsapp_phone": "0600000000",
     "color_countdown": "#8908da",
     "show_reviews": true,
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "12108174171315376258": {
+        "type": "shopify://apps/aov-ai-cart-drawer/blocks/avada-embed/938869e1-3feb-48fa-ab79-27fdfe609836",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Sound": {
