@@ -61,8 +61,8 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
-        "logo_max_width": 130,
-        "logo_mobile_max_width": 110,
+        "logo_max_width": 115,
+        "logo_mobile_max_width": 80,
         "menu": "",
         "sidebar_menu": "",
         "secondary_menu": "",
