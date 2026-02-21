@@ -3,11 +3,12 @@
 
     <div class="trust-badge-item">
       <div class="trust-badge-icon">
+        <!-- Lucide Truck icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="1" y="3" width="15" height="13" rx="1"/>
-          <path d="M16 8h4l3 5v3h-7V8z"/>
+          <path d="M1 3h13v13H1z"/>
+          <path d="M14 8h4l3 5v4h-7V8z"/>
           <circle cx="5.5" cy="18.5" r="2.5"/>
-          <circle cx="18.5" cy="18.5" r="2.5"/>
+          <circle cx="17.5" cy="18.5" r="2.5"/>
         </svg>
       </div>
       <div class="trust-badge-text">
@@ -37,8 +38,9 @@
 <style>
   .trust-badges-bar {
     background-color: #f2f2f2;
-    border-radius: 14px;
-    padding: 16px 28px;
+    border-radius: 0;
+    border: 2px solid #111111;
+    padding: 10px 28px;
     margin: 16px 0;
     width: 100%;
     box-sizing: border-box;
@@ -98,7 +100,7 @@
 
   @media (max-width: 480px) {
     .trust-badges-bar {
-      padding: 14px 16px;
+      padding: 8px 16px;
     }
 
     .trust-badge-line1,
