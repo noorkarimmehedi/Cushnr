@@ -38,7 +38,7 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "ORDERS OVER 50 SHIP FREE",
+            "text": "Gratis verzending bij bestellingen boven €100",
             "url": ""
           }
         }
