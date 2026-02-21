@@ -29,6 +29,12 @@
             "heading_tag": "h3"
           }
         },
+        "liquid_kcbmwJ": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% render 'award-Magnetic-Gym-Bag' %}"
+          }
+        },
         "badges": {
           "type": "badges",
           "settings": {}
@@ -129,6 +135,7 @@
         "vendor",
         "liquid_WKQNfH",
         "title",
+        "liquid_kcbmwJ",
         "badges",
         "price",
         "liquid_6JAzgX",
