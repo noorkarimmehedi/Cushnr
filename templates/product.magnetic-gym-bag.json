@@ -79,6 +79,12 @@
             "payment_button_text_color": ""
           }
         },
+        "liquid_Cg8VdV": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% render 'icon-Magnetic-Gym-Bag' %}"
+          }
+        },
         "liquid_kYApyA": {
           "type": "liquid",
           "settings": {
@@ -98,6 +104,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "liquid_Cg8VdV",
         "liquid_kYApyA"
       ],
       "settings": {
