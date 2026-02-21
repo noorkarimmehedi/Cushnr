@@ -452,10 +452,11 @@
       ],
       "settings": {
         "full_width": true,
+        "image": "shopify://shop_images/hf_20260221_112507_9f3e8bd3-d18c-4bd5-b3bc-c53e674f16a7.webp",
         "title": "",
         "content": "",
         "button_text": "",
-        "button_url": "shopify://products/glass-oil-dispenser-jar",
+        "button_url": "shopify://products/magnetische-sporttas",
         "desktop_text_position": "place-self-start text-start",
         "image_background": "",
         "image_background_gradient": "",
