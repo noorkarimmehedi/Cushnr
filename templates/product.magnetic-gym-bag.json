@@ -189,31 +189,9 @@
         "text_color": ""
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "recommendations_count": 10,
-        "products": [],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
     "custom_recommendations_CLpcEi": {
       "type": "custom-recommendations",
+      "disabled": true,
       "name": "You may also like",
       "settings": {
         "section_title": "YOU MAY ALSO LIKE",
@@ -279,39 +257,42 @@
         "bottom_button_border_radius": 0
       }
     },
-    "featured_collection_gEQgRW": {
-      "type": "featured-collection",
-      "disabled": true,
-      "name": "Featured collection",
+    "multiple_images_with_text_fdcxmW": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "item_JXatpg": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260221_170217_89ecfe95-ad09-4a04-b40b-15d988501417.webp",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "Magnetische Bevestiging",
+            "content": "<p>Til je dagelijkse routine naar een hoger niveau met onze Magnetische Flessentas – ontworpen met geavanceerde magnetische integratie voor ongeëvenaarde veelzijdigheid en stijl. Hecht moeiteloos aan magnetische oppervlakken en verandert de manier waarop je je spullen meeneemt. Geschikt voor flessen tot 46 oz</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_JXatpg"
+      ],
+      "name": "Multiple images with text",
       "settings": {
-        "collection": "bestsellers",
-        "products": [],
         "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_count": 5,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "YOU MAY ALSO LIKE",
-        "content": "",
-        "link_url": "",
-        "link_text": "View all",
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
         "background": "",
         "background_gradient": "",
         "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
+        "button_background": "",
+        "button_text_color": ""
       }
     }
   },
   "order": [
     "main",
     "text_with_icons_DrDHht",
-    "related-products",
     "custom_recommendations_CLpcEi",
-    "featured_collection_gEQgRW"
+    "multiple_images_with_text_fdcxmW"
   ]
 }
