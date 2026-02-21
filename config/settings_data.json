@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "section_vertical_spacing": "medium",
@@ -13,7 +22,7 @@
     "warning_color": "#ffb74a",
     "header_background": "#f5f5f5",
     "header_text_color": "#000000",
-    "footer_background": "#7900fd",
+    "footer_background": "#000000",
     "footer_text_color": "#ffffff",
     "primary_button_background": "#1a1a1a",
     "primary_button_text_color": "#ffffff",
@@ -82,29 +91,7 @@
     "whatsapp_phone": "0600000000",
     "color_countdown": "#8908da",
     "show_reviews": true,
-    "content_for_index": [],
-    "blocks": {
-      "6544682535036668446": {
-        "type": "shopify://apps/pumper-bundles/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
-        "disabled": false,
-        "settings": {}
-      },
-      "17676059084223943535": {
-        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
-        "disabled": false,
-        "settings": {}
-      },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
-      "13669795325273674392": {
-        "type": "shopify://apps/releasit-cod-form/blocks/app-embed/72faf214-4174-4fec-886b-0d0e8d3af9a2",
-        "disabled": false,
-        "settings": {}
-      }
-    }
+    "content_for_index": []
   },
   "presets": {
     "Sound": {
