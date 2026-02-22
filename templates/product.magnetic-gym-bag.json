@@ -458,6 +458,50 @@
         "heading_gradient": ""
       }
     },
+    "multiple_images_with_text_UphCq6": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "item_tih3wd": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260222_083446_82482981-9cfa-4a62-b309-3b97289d5855.webp",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "",
+            "content": "",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "item_XmibPR": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260222_083727_a98717d4-128c-4700-a51e-c8f2205ce98c.webp",
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "",
+            "content": "",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_tih3wd",
+        "item_XmibPR"
+      ],
+      "name": "Multiple images with text",
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
     "faq_EbecFW": {
       "type": "faq",
       "blocks": {
@@ -607,6 +651,7 @@
     "images_with_text_scrolling_CrheQt",
     "multiple_images_with_text_YhEHQW",
     "images_with_text_scrolling_gFnfgf",
+    "multiple_images_with_text_UphCq6",
     "faq_EbecFW",
     "1771747161e92c8417",
     "multiple_images_with_text_9UgRYE",
