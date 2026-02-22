@@ -334,7 +334,7 @@
           "type": "item",
           "settings": {
             "title": "100%",
-            "subheading": "AUTHENTIC HOME & KITCHEN PRODUCT",
+            "subheading": "AUTHENTIC GYM AND  PRODUCT",
             "content": "",
             "button_text": "",
             "button_url": "",
@@ -346,6 +346,7 @@
       "block_order": [
         "1664424181b38582d5-0"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "stack_mobile": true,
