@@ -568,12 +568,20 @@
             "title": "Hoe lang duurt de verzending meestal?",
             "content": "<p>We doen ons best om je magnetische tas zo snel mogelijk bij je te krijgen (meestal binnen 5–7 dagen). De levertijd kan variëren afhankelijk van je locatie.</p>"
           }
+        },
+        "item_Qjcx9g": {
+          "type": "item",
+          "settings": {
+            "title": "Wat is jullie terugbetalingsbeleid?",
+            "content": "<p>We willen dat je volledig tevreden bent met je aankoop. Ben je om welke reden dan ook niet blij met je magnetische tas? Raadpleeg dan ons retour- en terugbetalingsbeleid op onze website voor gedetailleerde informatie over hoe je een retour kunt starten of een terugbetaling kunt aanvragen.</p>"
+          }
         }
       },
       "block_order": [
         "item_tNNa6K",
         "item_rdAm7m",
-        "item_JiFgA4"
+        "item_JiFgA4",
+        "item_Qjcx9g"
       ],
       "name": "FAQ",
       "settings": {
