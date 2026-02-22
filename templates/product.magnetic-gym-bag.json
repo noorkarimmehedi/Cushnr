@@ -458,6 +458,48 @@
         "heading_gradient": ""
       }
     },
+    "rich_text_HqQkRF": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_JrdYz3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_TwWqrD": {
+          "type": "heading",
+          "settings": {
+            "text": "Aanbevolen door trainers en leden",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
+        "richtext_T3wcLb": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_JrdYz3",
+        "heading_TwWqrD",
+        "richtext_T3wcLb"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "multiple_images_with_text_UphCq6": {
       "type": "multiple-images-with-text",
       "blocks": {
@@ -651,6 +693,7 @@
     "images_with_text_scrolling_CrheQt",
     "multiple_images_with_text_YhEHQW",
     "images_with_text_scrolling_gFnfgf",
+    "rich_text_HqQkRF",
     "multiple_images_with_text_UphCq6",
     "faq_EbecFW",
     "1771747161e92c8417",
