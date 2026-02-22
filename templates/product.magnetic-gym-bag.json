@@ -466,9 +466,9 @@
           "settings": {
             "image": "shopify://shop_images/hf_20260222_092359_8f3c05c5-9eec-445c-aefa-1e3a0f8e8266.webp",
             "image_rotation_degrees": -2,
-            "subheading": "Vertrouwd door 1.900+ trainers en sportschoolleden in de hele EU en Nederland",
+            "subheading": "",
             "title": "",
-            "content": "",
+            "content": "<p>Vertrouwd door 1.900+ trainers en sportschoolleden in de hele EU en Nederland</p>",
             "button_url": "",
             "button_text": ""
           }
@@ -478,9 +478,9 @@
           "settings": {
             "image": "shopify://shop_images/hf_20260222_091529_a1291566-fb73-4619-8a65-cc2a313fe2ef.webp",
             "image_rotation_degrees": 1.5,
-            "subheading": "Vertrouwd door 1.900+ trainers en sportschoolleden in de hele EU en Nederland",
+            "subheading": "",
             "title": "",
-            "content": "",
+            "content": "<p>Vertrouwd door 1.900+ trainers en sportschoolleden in de hele EU en Nederland</p>",
             "button_url": "",
             "button_text": ""
           }
