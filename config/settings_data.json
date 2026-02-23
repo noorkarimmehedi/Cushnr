@@ -45,8 +45,8 @@
     "cart_type": "drawer",
     "cart_icon": "tote_bag",
     "cart_show_free_shipping_threshold": false,
-    "social_facebook": "https://www.facebook.com/bengalmartofficial/",
-    "social_instagram": "https://www.instagram.com/bengal_mart_official/",
+    "social_facebook": "https://www.facebook.com/demagnetischetasnl",
+    "social_instagram": "",
     "favicon": "shopify://shop_images/favicon_bengal.png",
     "checkout_accent_color": "#f0c417",
     "checkout_button_color": "#1a1a1a",
@@ -97,11 +97,6 @@
       "14060646107696862457": {
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {}
-      },
-      "12108174171315376258": {
-        "type": "shopify://apps/aov-ai-cart-drawer/blocks/avada-embed/938869e1-3feb-48fa-ab79-27fdfe609836",
-        "disabled": true,
         "settings": {}
       },
       "13223602749629917723": {
