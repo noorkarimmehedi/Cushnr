@@ -95,8 +95,8 @@
           "type": "newsletter",
           "settings": {
             "image_width": 150,
-            "heading_size": "h3",
-            "title": "Sign up for new stories and personal offers",
+            "heading_size": "h5",
+            "title": "Meld je aan voor nieuwe verhalen en persoonlijke aanbiedingen",
             "content": ""
           }
         },
