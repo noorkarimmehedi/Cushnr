@@ -1,7 +1,7 @@
 <div class="product-features-block">
-  <ul class="product-features-list" role="list">
+  <ul class="product-features-list">
     <li class="product-features-item">
-      <span class="product-features-icon" aria-hidden="true">
+      <span class="product-features-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="none">
           <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" fill="#2563EB"/>
           <path d="m9 12 2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -9,9 +9,8 @@
       </span>
       <span class="product-features-text">Hecht direct aan fitnessapparatuur</span>
     </li>
-
     <li class="product-features-item">
-      <span class="product-features-icon" aria-hidden="true">
+      <span class="product-features-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="none">
           <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" fill="#2563EB"/>
           <path d="m9 12 2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -19,9 +18,8 @@
       </span>
       <span class="product-features-text">Houdt je fles, telefoon en essentials veilig opgeborgen</span>
     </li>
-
     <li class="product-features-item">
-      <span class="product-features-icon" aria-hidden="true">
+      <span class="product-features-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="none">
           <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" fill="#2563EB"/>
           <path d="m9 12 2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -32,54 +30,61 @@
   </ul>
 </div>
 
-<style>
-  .product-features-block{
-    border: 1.5px solid #E5E7EB;
-    border-radius: 4px;
-    background: #fff;
-    margin: 16px 0;
+{% style %}
+  .product-features-block {
+    --grid-unit: 8px;
+    --pf-blue: #2563EB;
+    --pf-border: #E5E7EB;
+    --pf-divider: #F3F4F6;
+    --pf-text: #111827;
 
-    /* NO left padding */
-    padding: 8px 14px 8px 0;
+    border: 1.5px solid var(--pf-border);
+    border-left: 3px solid var(--pf-blue);
+    border-radius: 3px;
+    background: #fff;
+    padding: calc(var(--grid-unit) * 1) calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 1) 0;
+    margin: calc(var(--grid-unit) * 2) 0;
+    width: 100%;
   }
 
-  .product-features-list{
+  .product-features-list {
     list-style: none;
     margin: 0;
     padding: 0;
-
     display: grid;
-    row-gap: 2px;
+    grid-template-rows: repeat(3, auto);
+    gap: 0;
   }
 
-  .product-features-item{
+  .product-features-item {
     display: grid;
-    grid-template-columns: 28px 1fr;
-    column-gap: 8px;
-
+    grid-template-columns: calc(var(--grid-unit) * 6) 1fr;
     align-items: center;
-    padding: 4px 0;
-
-    border-bottom: 1px solid #F3F4F6;
+    padding: calc(var(--grid-unit) * 0.625) 0;
+    border-bottom: 1px solid var(--pf-divider);
+    gap: 0;
   }
 
-  .product-features-item:last-child{
+  .product-features-item:last-child {
     border-bottom: none;
   }
 
-  .product-features-icon{
-    width: 28px;
-    height: 28px;
-    display: grid;
-    place-items: center;
+  .product-features-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--grid-unit) * 6);
+    height: calc(var(--grid-unit) * 6);
+    flex-shrink: 0;
   }
 
-  .product-features-text{
-    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 12px;
+  .product-features-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11.5px;
     font-weight: 500;
-    color: #111827;
-    line-height: 1.35;
-    margin: 0;
+    color: var(--pf-text);
+    line-height: calc(var(--grid-unit) * 2);
+    letter-spacing: 0.01em;
+    padding-right: calc(var(--grid-unit) * 1.5);
   }
-</style>
+{% endstyle %}
