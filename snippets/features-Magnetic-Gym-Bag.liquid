@@ -33,15 +33,14 @@
 </div>
 
 <style>
-  /* Swiss grid: clean columns + consistent rhythm */
   .product-features-block{
     border: 1.5px solid #E5E7EB;
     border-radius: 4px;
     background: #fff;
     margin: 16px 0;
 
-    /* reduced top/bottom + tighter overall */
-    padding: 8px 14px;
+    /* NO left padding */
+    padding: 8px 14px 8px 0;
   }
 
   .product-features-list{
@@ -50,21 +49,15 @@
     padding: 0;
 
     display: grid;
-    grid-auto-rows: minmax(0, auto);
-
-    /* reduced vertical gap */
     row-gap: 2px;
   }
 
   .product-features-item{
-    /* Swiss-style 2-column grid: icon column + text column */
     display: grid;
     grid-template-columns: 28px 1fr;
-    column-gap: 10px;
+    column-gap: 8px;
 
     align-items: center;
-
-    /* reduced top/bottom spacing per row */
     padding: 4px 0;
 
     border-bottom: 1px solid #F3F4F6;
@@ -87,8 +80,6 @@
     font-weight: 500;
     color: #111827;
     line-height: 1.35;
-
-    /* Swiss grid text alignment */
     margin: 0;
   }
 </style>
