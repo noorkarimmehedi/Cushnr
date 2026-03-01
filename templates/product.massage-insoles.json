@@ -335,7 +335,7 @@
             "background_color": "#f5f5f5",
             "headline_color": "#000000",
             "description_color": "#000000",
-            "padding_mobile": 40,
+            "padding_mobile": 20,
             "padding_desktop": 60,
             "gap_mobile": 32,
             "gap_desktop": 60,
