@@ -85,6 +85,7 @@
         },
         "liquid_kcbmwJ": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "liquid": "{% render 'award-Magnetic-Gym-Bag' %}"
           }
