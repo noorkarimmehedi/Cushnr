@@ -357,6 +357,7 @@
       "block_order": [
         "item_Ff6FfC"
       ],
+      "disabled": true,
       "name": "Images and text scrolling",
       "settings": {
         "full_width": true,
