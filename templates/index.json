@@ -15,8 +15,6 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_112508_7cd78ab2-b4a1-4650-814b-53ff0449ba20.png",
-            "mobile_image": "shopify://shop_images/hf_20260221_112508_7cd78ab2-b4a1-4650-814b-53ff0449ba20.png",
             "content_max_width": 860,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -311,7 +309,7 @@
       "name": "Featured product",
       "settings": {
         "full_width": true,
-        "product": "magnetische-gymtas",
+        "product": "cushnr®-massage-inlegzolen",
         "desktop_media_width": 55,
         "desktop_media_layout": "carousel_thumbnails_left",
         "mobile_media_size": "expanded",
@@ -399,7 +397,6 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/hf_20260221_190911_5266d6f5-7fab-4e5b-b24d-aa900dada1a5.webp",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -454,7 +451,6 @@
       ],
       "settings": {
         "full_width": true,
-        "image": "shopify://shop_images/hf_20260221_112507_9f3e8bd3-d18c-4bd5-b3bc-c53e674f16a7.webp",
         "title": "",
         "content": "",
         "button_text": "",
