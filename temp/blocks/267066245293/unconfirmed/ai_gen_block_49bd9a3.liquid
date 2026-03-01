@@ -1,6 +1,401 @@
+{% doc %}
+  @prompt
+    generate a video loop section where the section will adapt the video size and have a headline and description. all should be customizable also the vidoe should be on loop and auto playand no button for maximise the video or for sound, on desktop the video should be on left and the text headline and description should be on right 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-loop-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-video-loop-container-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ai-video-loop-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: {{ block.settings.video_aspect_ratio }}%;
+    background-color: #000000;
+  }
+
+  .ai-video-loop-video-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: {{ block.settings.video_fit }};
+  }
+
+  .ai-video-loop-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .ai-video-loop-placeholder-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+  }
+
+  .ai-video-loop-content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding }}px;
+    text-align: {{ block.settings.text_alignment }};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-video-loop-heading-{{ ai_gen_id }} {
+    margin: 0 0 {{ block.settings.heading_spacing }}px 0;
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .ai-video-loop-description-{{ ai_gen_id }} {
+    margin: 0;
+    color: {{ block.settings.description_color }};
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.5;
+  }
+
+  .ai-video-loop-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-video-loop-container-{{ ai_gen_id }} {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .ai-video-loop-wrapper-{{ ai_gen_id }} {
+      flex: 1;
+      padding-bottom: 0;
+      min-height: 400px;
+    }
+
+    .ai-video-loop-content-{{ ai_gen_id }} {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-video-loop-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-video-loop-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-video-loop-content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<video-loop-{{ ai_gen_id }} class="ai-video-loop-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-video-loop-container-{{ ai_gen_id }}">
+    <div class="ai-video-loop-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.video != blank %}
+        <video
+          class="ai-video-loop-video-{{ ai_gen_id }}"
+          autoplay
+          loop
+          muted
+          playsinline
+          disablepictureinpicture
+          controlslist="nodownload nofullscreen noremoteplayback"
+          {% if block.settings.video_poster != blank %}
+            poster="{{ block.settings.video_poster | image_url: width: 1600 }}"
+          {% endif %}
+        >
+          {% for source in block.settings.video.sources %}
+            <source src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+        </video>
+      {% else %}
+        <div class="ai-video-loop-placeholder-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <div class="ai-video-loop-empty-state-{{ ai_gen_id }}">
+            Next, add a video
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if block.settings.heading != blank or block.settings.description != blank %}
+      <div class="ai-video-loop-content-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-video-loop-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <div class="ai-video-loop-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</video-loop-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoLoop{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.video = this.querySelector('.ai-video-loop-video-{{ ai_gen_id }}');
+        
+        if (this.video) {
+          this.ensureVideoPlays();
+          this.video.addEventListener('loadedmetadata', () => {
+            this.ensureVideoPlays();
+          });
+        }
+      }
+
+      ensureVideoPlays() {
+        if (this.video && this.video.paused) {
+          const playPromise = this.video.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              this.video.muted = true;
+              this.video.play();
+            });
+          }
+        }
+      }
+    }
+
+    customElements.define('video-loop-{{ ai_gen_id }}', VideoLoop{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Video loop",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video poster image"
+    },
+    {
+      "type": "select",
+      "id": "video_aspect_ratio",
+      "label": "Aspect ratio (mobile)",
+      "options": [
+        {
+          "value": "42.86",
+          "label": "21:9 (Ultrawide)"
+        },
+        {
+          "value": "56.25",
+          "label": "16:9 (Widescreen)"
+        },
+        {
+          "value": "75",
+          "label": "4:3 (Standard)"
+        },
+        {
+          "value": "100",
+          "label": "1:1 (Square)"
+        },
+        {
+          "value": "133.33",
+          "label": "3:4 (Portrait)"
+        }
+      ],
+      "default": "56.25"
+    },
+    {
+      "type": "select",
+      "id": "video_fit",
+      "label": "Video fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover (fill container)"
+        },
+        {
+          "value": "contain",
+          "label": "Contain (fit inside)"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Watch our story</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Discover the passion and craftsmanship behind our products.</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Heading style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Spacing below",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Description style"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video loop"
+    }
+  ]
+}
 {% endschema %}
