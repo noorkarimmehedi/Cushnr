@@ -35,6 +35,7 @@
         },
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {
             "show_taxes_notice": false
           }
@@ -73,6 +74,7 @@
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "hide_sold_out_variants": false,
             "stack_blocks": true,
@@ -308,7 +310,6 @@
         "item_Ff6FfC": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_170217_89ecfe95-ad09-4a04-b40b-15d988501417.webp",
             "icon": "none",
             "icon_width": 48,
             "title": "Magnetische Bevestiging",
@@ -339,7 +340,6 @@
         "item_JXatpg": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_170217_89ecfe95-ad09-4a04-b40b-15d988501417.webp",
             "image_rotation_degrees": -2,
             "subheading": "",
             "title": "Magnetische Bevestiging",
@@ -371,7 +371,6 @@
         "item_d8yrhw": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_152214_d2444608-cbc1-4340-a02f-4bfd42ab401d.webp",
             "icon": "none",
             "icon_width": 48,
             "title": "Telefoonintegratie",
@@ -402,7 +401,6 @@
         "item_DVURyL": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_152214_d2444608-cbc1-4340-a02f-4bfd42ab401d.webp",
             "image_rotation_degrees": -2,
             "subheading": "",
             "title": "Telefoonintegratie",
@@ -434,7 +432,6 @@
         "item_yUHcMz": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_180459_fb65cbd5-3120-4eb1-bfb9-132f2698b9c7.webp",
             "icon": "none",
             "icon_width": 48,
             "title": "Ritsvak",
@@ -507,7 +504,6 @@
         "item_tih3wd": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260222_092359_8f3c05c5-9eec-445c-aefa-1e3a0f8e8266.webp",
             "image_rotation_degrees": -2,
             "subheading": "",
             "title": "",
@@ -519,7 +515,6 @@
         "item_XmibPR": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260222_091529_a1291566-fb73-4619-8a65-cc2a313fe2ef.webp",
             "image_rotation_degrees": 1.5,
             "subheading": "",
             "title": "",
@@ -628,7 +623,6 @@
         "item_8mykVd": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/hf_20260221_180459_fb65cbd5-3120-4eb1-bfb9-132f2698b9c7.webp",
             "image_rotation_degrees": -2,
             "subheading": "",
             "title": "Ritsvak",
