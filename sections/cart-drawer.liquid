@@ -234,7 +234,6 @@
         {%- endif -%}
 
         {%- if section.settings.show_checkout_button -%}
-          {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'sm' -%}
           {%- render 'button', type: 'submit', content: 'Buy Now', name: 'checkout', size: 'sm' -%}
         {%- endif -%}
       </form>
