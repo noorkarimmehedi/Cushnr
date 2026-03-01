@@ -15,14 +15,14 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hf_20260301_113607_ac55df53-564f-47d0-bacb-05dd5afb2ae8.webp",
+            "image": "shopify://shop_images/hf_20260301_124843_da4bebc4-f988-4423-a197-cdbc94371645.webp",
             "content_max_width": 860,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "subheading": "",
             "title": "",
             "heading_tag": "h0",
-            "button_text": "SHOP THE MASSAGE INSOLES",
+            "button_text": "",
             "button_link": "shopify://products/cushnr®-massage-insoles",
             "text_color": "#ffffff",
             "button_background": "#000000",
