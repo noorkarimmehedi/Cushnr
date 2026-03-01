@@ -125,7 +125,7 @@ Supported variables
       {%- capture input_label -%}{{ 'product.general.variant' | t }}{%- endcapture -%}
       {%- capture select_options -%}
         {%- for variant in product.variants -%}
-          <option {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          <option {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</option>
         {%- endfor -%}
       {%- endcapture -%}
 

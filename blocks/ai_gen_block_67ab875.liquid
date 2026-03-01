@@ -482,12 +482,12 @@
 
               <div class="ai-you-may-like__price-wrapper-{{ ai_gen_id }}">
                 <span class="ai-you-may-like__price-{{ ai_gen_id }}">
-                  {{ product.price | money }}
+                  {{ product.price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}
                 </span>
 
                 {% if product.compare_at_price > product.price %}
                   <span class="ai-you-may-like__compare-price-{{ ai_gen_id }}">
-                    {{ product.compare_at_price | money }}
+                    {{ product.compare_at_price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}
                   </span>
                   {% if block.settings.show_sale_badge %}
                     <span class="ai-you-may-like__badge-{{ ai_gen_id }}">

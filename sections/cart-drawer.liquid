@@ -92,13 +92,13 @@
               {%- render 'icon' with 'discount' -%} {{- discount_application.title -}}
             </div>
 
-            <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
+            <span class="text-subdued">-{{ discount_application.total_allocated_amount | money | replace: "€", "৳" | replace: "EUR", "BDT" | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
           </div>
         {% endfor %}
 
         <div class="h-stack gap-4 justify-between">
           <span class="h5">{{ 'cart.general.total' | t }}</span>
-          <span class="h5">{{- cart.total_price | money_with_currency -}}</span>
+          <span class="h5">{{- cart.total_price | money_with_currency | replace: "€", "৳" | replace: "EUR", "BDT" | replace: "€", "৳" | replace: "EUR", "BDT" -}}</span>
         </div>
 
         {%- if section.settings.show_shipping_text -%}
@@ -235,6 +235,7 @@
 
         {%- if section.settings.show_checkout_button -%}
           {%- render 'button', type: 'submit', content: checkout_label, icon: 'picto-lock', name: 'checkout', size: 'sm' -%}
+          {%- render 'button', type: 'submit', content: 'Buy Now', name: 'checkout', size: 'sm' -%}
         {%- endif -%}
       </form>
     </div>

@@ -34,9 +34,9 @@ Supported variables
 
       <p class="text-sm text-subdued">
         {%- if settings.currency_code_enabled -%}
-          {{- product.price | money_with_currency -}}
+          {{- product.price | money_with_currency | replace: "€", "৳" | replace: "EUR", "BDT" -}}
         {%- else -%}
-          {{- product.price | money -}}
+          {{- product.price | money | replace: "€", "৳" | replace: "EUR", "BDT" -}}
         {%- endif -%}
       </p>
     </div>

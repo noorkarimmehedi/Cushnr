@@ -66,9 +66,9 @@ Supported variables
       <price-list class="price-list {% if text_alignment == 'center' %}justify-center{% endif %}">
         <sale-price class="text-subdued">
           {%- if settings.currency_code_enabled -%}
-            {{- 4500 | money_with_currency -}}
+            {{- 4500 | money_with_currency | replace: "€", "৳" | replace: "EUR", "BDT" -}}
           {%- else -%}
-            {{- 4500 | money -}}
+            {{- 4500 | money | replace: "€", "৳" | replace: "EUR", "BDT" -}}
           {%- endif -%}
         </sale-price>
       </price-list>

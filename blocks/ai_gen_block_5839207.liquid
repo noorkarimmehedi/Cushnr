@@ -237,7 +237,7 @@
             </div>
             <div class="ai-product-info-{{ ai_gen_id }}">
               <h3 class="ai-product-name-{{ ai_gen_id }}">{{ product.title }}</h3>
-              <p class="ai-product-price-{{ ai_gen_id }}">{{ product.price | money }}</p>
+              <p class="ai-product-price-{{ ai_gen_id }}">{{ product.price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</p>
             </div>
           </a>
           

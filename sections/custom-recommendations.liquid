@@ -296,10 +296,10 @@
                 </a>
               </h3>
               <div class="ai-you-may-like-price-{{ section_id }}">
-                <span>{{ product.price | money }}</span>
+                <span>{{ product.price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                 {% if product.compare_at_price > product.price %}
                   <span class="ai-you-may-like-compare-price-{{ section_id }}">
-                    {{ product.compare_at_price | money }}
+                    {{ product.compare_at_price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}
                   </span>
                 {% endif %}
               </div>

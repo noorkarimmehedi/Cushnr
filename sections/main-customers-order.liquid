@@ -65,7 +65,7 @@
                 <tr>
                   <td>{%- render 'line-item', line_item: line_item -%}</td>
                   <td class="hidden align-center text-center text-subdued sm:table-cell">{{ line_item.quantity }}</td>
-                  <td class="hidden align-center text-subdued text-end sm:table-cell">{{ line_item.final_line_price | money }}</td>
+                  <td class="hidden align-center text-subdued text-end sm:table-cell">{{ line_item.final_line_price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</td>
                 </tr>
               {%- endfor -%}
             </tbody>
@@ -78,20 +78,20 @@
                   <div class="v-stack gap-2 text-start">
                     <div class="h-stack gap-4 justify-between">
                       <span>{{ 'customer.order.subtotal' | t }}</span>
-                      <span>{{ order.line_items_subtotal_price | money }}</span>
+                      <span>{{ order.line_items_subtotal_price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                     </div>
 
                     {%- for discount_application in order.cart_level_discount_applications -%}
                       <div class="h-stack gap-4 justify-between">
                         <span>{{ 'customer.order.discount' | t }} ({{ discount_application.title }})</span>
-                        <span>-{{ discount_application.total_allocated_amount | money }}</span>
+                        <span>-{{ discount_application.total_allocated_amount | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                       </div>
                     {%- endfor -%}
 
                     {%- for shipping_method in order.shipping_methods -%}
                       <div class="h-stack gap-4 justify-between">
                         <span>{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</span>
-                        <span>{{ shipping_method.price | money }}</span>
+                        <span>{{ shipping_method.price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                       </div>
                     {%- endfor -%}
 
@@ -103,27 +103,27 @@
                           <span>{{ 'customer.order.taxes_excluded' | t }} ({{ tax_line.title }} {{ tax_line.rate_percentage }}%)</span>
                         {%- endif -%}
 
-                        <span>{{ tax_line.price | money }}</span>
+                        <span>{{ tax_line.price | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                       </div>
                     {%- endfor -%}
 
                     {%- if order.total_duties > 0 -%}
                       <div class="h-stack gap-4 justify-between">
                         <span>{{ 'customer.order.total_duties' | t }}</span>
-                        <span>{{ order.total_duties | money }}</span>
+                        <span>{{ order.total_duties | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                       </div>
                     {%- endif -%}
 
                     {%- if order.total_refunded_amount > 0 -%}
                       <div class="h-stack gap-4 justify-between">
                         <span>{{ 'customer.order.refunded_amount' | t }}</span>
-                        <span>{{ order.total_refunded_amount | money }}</span>
+                        <span>{{ order.total_refunded_amount | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                       </div>
                     {%- endif -%}
 
                     <div class="h-stack gap-4 justify-between">
                       <span class="h6">{{ 'customer.order.total' | t }}</span>
-                      <span class="h6">{{ order.total_net_amount | money_with_currency }}</span>
+                      <span class="h6">{{ order.total_net_amount | money_with_currency | replace: "€", "৳" | replace: "EUR", "BDT" }}</span>
                     </div>
                   </div>
                 </td>

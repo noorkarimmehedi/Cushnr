@@ -85,7 +85,7 @@ Supported variables
       <ul class="contents" role="list">
         {%- for discount_allocation in line_item.line_level_discount_allocations -%}
           <li class="badge">
-            {%- render 'icon' with 'discount' -%} {{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})
+            {%- render 'icon' with 'discount' -%} {{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money | replace: "€", "৳" | replace: "EUR", "BDT" }})
           </li>
         {%- endfor -%}
       </ul>

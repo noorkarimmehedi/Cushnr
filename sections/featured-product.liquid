@@ -75,7 +75,7 @@
             {%- when 'price' -%}
               <div class="product-info__price">
                 <price-list class="price-list price-list--lg">
-                  <sale-price class="text-lg">{{ 4000 | money }}</sale-price>
+                  <sale-price class="text-lg">{{ 4000 | money | replace: "€", "৳" | replace: "EUR", "BDT" }}</sale-price>
                 </price-list>
               </div>
 
