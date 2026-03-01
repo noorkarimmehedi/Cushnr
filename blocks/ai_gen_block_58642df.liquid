@@ -52,18 +52,6 @@
     max-height: 400px;
   }
 
-  .ai-video-loop-empty-state-{{ ai_gen_id }} {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-    pointer-events: none;
-  }
-
   .ai-video-loop-content-{{ ai_gen_id }} {
     width: 100%;
     display: flex;
@@ -72,14 +60,50 @@
     text-align: {{ block.settings.text_alignment_mobile }};
   }
 
+  /* ── Headline & highlight ── */
   .ai-video-loop-headline-{{ ai_gen_id }} {
     font-size: {{ block.settings.headline_size_mobile }}px;
     font-weight: 600;
     color: {{ block.settings.headline_color }};
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
+    /* Creates a new stacking context so z-index:-1 on ::before stays
+       visible above the section background but behind the text */
+    isolation: isolate;
   }
 
+  /*
+   * .highlight-text wraps the word(s) that get the animated marker.
+   * The ::before pseudo-element slides from scaleX(0) → scaleX(1).
+   */
+
+  .ai-video-loop-headline-{{ ai_gen_id }} .highlight-text-{{ ai_gen_id }} {
+    position: relative;
+    display: inline;
+    white-space: nowrap;
+  }
+
+  /* The highlight bar — sits behind the text characters */
+  .ai-video-loop-headline-{{ ai_gen_id }} .highlight-text-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    bottom: {{ block.settings.highlight_offset }}px;
+    height: {{ block.settings.highlight_height }}px;
+    background-color: {{ block.settings.highlight_color }};
+    border-radius: {{ block.settings.highlight_radius }}px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform {{ block.settings.highlight_duration }}ms {{ block.settings.highlight_easing }} {{ block.settings.highlight_delay }}ms;
+  }
+
+  .ai-video-loop-headline-{{ ai_gen_id }} .highlight-text-{{ ai_gen_id }}.is-visible::before {
+    transform: scaleX(1);
+  }
+
+  /* ── Description ── */
   .ai-video-loop-description-{{ ai_gen_id }} {
     font-size: {{ block.settings.description_size_mobile }}px;
     color: {{ block.settings.description_color }};
@@ -87,6 +111,7 @@
     margin: 0;
   }
 
+  /* ── Desktop ── */
   @media screen and (min-width: 750px) {
     .ai-video-loop-{{ ai_gen_id }} {
       padding: {{ block.settings.padding_desktop }}px 40px;
@@ -120,6 +145,8 @@
 
 <video-loop-{{ ai_gen_id }} class="ai-video-loop-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
   <div class="ai-video-loop-container-{{ ai_gen_id }}">
+
+    <!-- Video -->
     <div class="ai-video-loop-video-wrapper-{{ ai_gen_id }}">
       {% if block.settings.video != blank %}
         <video
@@ -138,56 +165,80 @@
       {% else %}
         <div class="ai-video-loop-placeholder-{{ ai_gen_id }}">
           {{ 'image' | placeholder_svg_tag }}
-          <div class="ai-video-loop-empty-state-{{ ai_gen_id }}">
-            Next, add a video
-          </div>
         </div>
       {% endif %}
     </div>
 
+    <!-- Text content -->
     <div class="ai-video-loop-content-{{ ai_gen_id }}">
       {% if block.settings.headline != blank %}
-        <h2 class="ai-video-loop-headline-{{ ai_gen_id }}">{{ block.settings.headline }}</h2>
+        <h2 class="ai-video-loop-headline-{{ ai_gen_id }}">
+          {%- assign headline_text = block.settings.headline -%}
+          {%- assign highlight_word = block.settings.highlight_word -%}
+          {%- if highlight_word != blank and headline_text contains highlight_word -%}
+            {%- assign parts = headline_text | split: highlight_word -%}
+            {{ parts[0] }}<span class="highlight-text-{{ ai_gen_id }}">{{ highlight_word }}</span>{{ parts[1] }}
+          {%- else -%}
+            {{ headline_text }}
+          {%- endif -%}
+        </h2>
       {% endif %}
 
       {% if block.settings.description != blank %}
         <div class="ai-video-loop-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
       {% endif %}
     </div>
+
   </div>
 </video-loop-{{ ai_gen_id }}>
 
 <script>
   (function() {
     class VideoLoop{{ ai_gen_id }} extends HTMLElement {
-      constructor() {
-        super();
-      }
-
       connectedCallback() {
+        // ── Video controls ──
         const video = this.querySelector('.ai-video-loop-video-{{ ai_gen_id }}');
-        
         if (video) {
-          video.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-          });
-
-          const observer = new IntersectionObserver((entries) => {
+          video.addEventListener('contextmenu', e => e.preventDefault());
+          const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                video.play().catch(() => {});
-              } else {
-                video.pause();
-              }
+              entry.isIntersecting ? video.play().catch(() => {}) : video.pause();
             });
           }, { threshold: 0.5 });
+          videoObserver.observe(video);
+        }
 
-          observer.observe(video);
+        // ── Highlight animation ──
+        const highlight = this.querySelector('.highlight-text-{{ ai_gen_id }}');
+        if (highlight) {
+          const triggerAnimation = () => {
+            highlight.classList.add('is-visible');
+          };
+
+          // Use IntersectionObserver so animation fires when scrolled into view
+          if ('IntersectionObserver' in window) {
+            const highlightObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  // Small rAF delay so the browser paints the element first
+                  requestAnimationFrame(() => {
+                    setTimeout(triggerAnimation, 100);
+                  });
+                  highlightObserver.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.3 });
+            highlightObserver.observe(highlight);
+          } else {
+            triggerAnimation();
+          }
         }
       }
     }
 
-    customElements.define('video-loop-{{ ai_gen_id }}', VideoLoop{{ ai_gen_id }});
+    if (!customElements.get('video-loop-{{ ai_gen_id }}')) {
+      customElements.define('video-loop-{{ ai_gen_id }}', VideoLoop{{ ai_gen_id }});
+    }
   })();
 </script>
 
@@ -229,10 +280,17 @@
       "content": "Content"
     },
     {
-      "type": "richtext",
+      "type": "text",
       "id": "headline",
       "label": "Headline",
-      "default": "<p>Experience the difference</p>"
+      "default": "Experience the difference"
+    },
+    {
+      "type": "text",
+      "id": "highlight_word",
+      "label": "Word(s) to highlight",
+      "info": "Enter the exact word or phrase from your headline that should receive the animated highlight. Leave blank to disable.",
+      "default": "difference"
     },
     {
       "type": "richtext",
@@ -245,18 +303,9 @@
       "id": "text_alignment_mobile",
       "label": "Text alignment (mobile)",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "left",   "label": "Left"   },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right"  }
       ],
       "default": "left"
     },
@@ -265,18 +314,9 @@
       "id": "text_alignment_desktop",
       "label": "Text alignment (desktop)",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "left",   "label": "Left"   },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right"  }
       ],
       "default": "left"
     },
@@ -329,6 +369,80 @@
       "step": 4,
       "unit": "px",
       "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Highlight style"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight colour",
+      "default": "#a8b4f8"
+    },
+    {
+      "type": "range",
+      "id": "highlight_height",
+      "label": "Highlight height",
+      "min": 4,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "highlight_offset",
+      "label": "Highlight vertical offset",
+      "info": "Positive values move the highlight up, negative values move it down.",
+      "min": -10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "label": "Highlight corner radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "highlight_duration",
+      "label": "Animation duration",
+      "min": 200,
+      "max": 1200,
+      "step": 100,
+      "unit": "ms",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "highlight_delay",
+      "label": "Animation delay",
+      "min": 0,
+      "max": 1000,
+      "step": 100,
+      "unit": "ms",
+      "default": 200
+    },
+    {
+      "type": "select",
+      "id": "highlight_easing",
+      "label": "Animation easing",
+      "options": [
+        { "value": "ease",        "label": "Ease"         },
+        { "value": "ease-in",     "label": "Ease in"      },
+        { "value": "ease-out",    "label": "Ease out"     },
+        { "value": "ease-in-out", "label": "Ease in-out"  },
+        { "value": "linear",      "label": "Linear"       }
+      ],
+      "default": "ease-out"
     },
     {
       "type": "header",
