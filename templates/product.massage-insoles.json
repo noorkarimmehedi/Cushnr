@@ -306,6 +306,41 @@
         "bottom_button_border_radius": 0
       }
     },
+    "1772380311afaf2baf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_58642df_X9xRT3": {
+          "type": "ai_gen_block_58642df",
+          "settings": {
+            "video": "shopify://files/videos/fa08e56c368a4a1f834c8ddb89314112.HD-720p-3.0Mbps-44682181.mp4",
+            "video_width_desktop": 50,
+            "video_border_radius": 8,
+            "headline": "<p>Walk <strong>Pain-Free</strong></p>",
+            "description": "<p>Meet Cushnr. insoles - the ultimate comfort for your feet. Rediscover the joy of standing, walking, and living without foot pain.</p>",
+            "text_alignment_mobile": "center",
+            "text_alignment_desktop": "left",
+            "headline_size_mobile": 24,
+            "headline_size_desktop": 40,
+            "description_size_mobile": 14,
+            "description_size_desktop": 16,
+            "text_gap": 16,
+            "background_color": "#f5f5f5",
+            "headline_color": "#000000",
+            "description_color": "#000000",
+            "padding_mobile": 40,
+            "padding_desktop": 60,
+            "gap_mobile": 32,
+            "gap_desktop": 60,
+            "max_width": 1400
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_58642df_X9xRT3"
+      ],
+      "settings": {}
+    },
     "1772379792f240c4ea": {
       "type": "_blocks",
       "blocks": {
@@ -334,6 +369,7 @@
       "block_order": [
         "ai_gen_block_49bd9a3_Crxq7F"
       ],
+      "disabled": true,
       "settings": {}
     },
     "images_with_text_scrolling_rpfRFj": {
@@ -709,6 +745,7 @@
     "main",
     "text_with_icons_DrDHht",
     "custom_recommendations_CLpcEi",
+    "1772380311afaf2baf",
     "1772379792f240c4ea",
     "images_with_text_scrolling_rpfRFj",
     "multiple_images_with_text_fdcxmW",
