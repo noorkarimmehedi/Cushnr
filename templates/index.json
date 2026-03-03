@@ -23,7 +23,7 @@
             "title": "",
             "heading_tag": "h0",
             "button_text": "",
-            "button_link": "shopify://products/cushnr®-massage-insoles",
+            "button_link": "shopify://products/stepprs-massage-insoles",
             "text_color": "#ffffff",
             "button_background": "#000000",
             "button_text_color": "#f5f5f5",
@@ -310,7 +310,7 @@
       "name": "Featured product",
       "settings": {
         "full_width": true,
-        "product": "cushnr®-massage-insoles",
+        "product": "stepprs-massage-insoles",
         "desktop_media_width": 55,
         "desktop_media_layout": "carousel_thumbnails_left",
         "mobile_media_size": "expanded",
